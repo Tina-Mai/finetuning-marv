@@ -1,3 +1,7 @@
+# Ignore environment files
+openai-env
+.env
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -19,11 +23,9 @@ lib64/
 parts/
 sdist/
 var/
-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -39,13 +41,13 @@ pip-delete-this-directory.txt
 htmlcov/
 .tox/
 .nox/
-.cache/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
 coverage.xml
 *.cover
 .hypothesis/
-.pytest_cache/
-nosetests.xml
-coverage/
 
 # Translations
 *.mo
@@ -53,9 +55,6 @@ coverage/
 
 # Django stuff:
 *.log
-*.pot
-*.pyc
-*.pyo
 local_settings.py
 db.sqlite3
 
@@ -79,88 +78,48 @@ target/
 profile_default/
 ipython_config.py
 
-# Environments
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# dotenv
 .env
-.venv
-env/
+
+# virtualenv
 venv/
 ENV/
-env.bak/
+env/
 venv.bak/
+venv/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
 
 # mypy
 .mypy_cache/
 .dmypy.json
 dmypy.json
 
-# Pyre
+# Pyre type checker
 .pyre/
 
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
+# pyright
+.pyright/
 
-# SageMath parsed files
-*.sage.py
+# pytype
+.pytype/
 
-# Encrypted credentials for OpenAI, etc.
-config/config.py
+# Cython debug symbols
+cython_debug/
 
-# dotenv
-.env
+# JetBrains
+.idea/
 
-# pytest
-.pytest_cache/
-
-# SQLAlchemy
-*.sqlite3
-*.db
-
-# mypy
-.mypy_cache/
-
-# Virtual environments
-.env/
-.venv/
-
-# MacOS
-.DS_Store
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# Visual Studio Code
+# VS Code
 .vscode/
-
-# pyenv
-.python-version
-
-# Editors
-*.swp
-*.swo
-*.tmp
-*~
-
-# Ansible
-.retry
-.inventory
-
-# Coverage
-.coverage
-*.coverage
-
-# Secrets (general, adjust based on your project needs)
-secrets/
-
-# Ignore various temp files
-*.bak
-*.old
-*.orig
-*.tmp
-*.temp
-*.log
-
-# Specific file to ignore
-config/config.py

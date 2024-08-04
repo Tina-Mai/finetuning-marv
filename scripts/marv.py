@@ -1,10 +1,7 @@
 import openai
-from config.config import openai_api_key
-
-openai.api_key = openai_api_key
 
 # use the fine-tuned model
-def use_fine_tuned_model(prompt, model_name):
+def use_finetuned_model(prompt, model_name):
     response = openai.ChatCompletion.create(
         model=model_name,
         messages=[
@@ -15,7 +12,7 @@ def use_fine_tuned_model(prompt, model_name):
     return response['choices'][0]['message']['content']
 
 # example use
-model_name = 'your-fine-tuned-model-name'
+model_name = 'Marv'
 prompt = "What's the weather like today?"
-response = use_fine_tuned_model(prompt, model_name)
+response = use_finetuned_model(prompt, model_name)
 print(response)
