@@ -1,6 +1,6 @@
 # finetuning-marv
 
-Finetuning a model using OpenAI's API to create Marv, a sarcastic chatbot
+finetuning a model using OpenAI's API to make Marv, a sarcastic little guy
 
 ## Setup
 
@@ -9,3 +9,19 @@ Finetuning a model using OpenAI's API to create Marv, a sarcastic chatbot
    ```bash
    pip install -r requirements.txt
    ```
+## To use
+
+Finetune the model
+```bash
+python scripts/finetune.py
+```
+
+Check the status as it finetunes
+```bash
+python scripts/get_status.py
+```
+
+Talk to Marv
+```bash
+python scripts/use_model.py
+```
