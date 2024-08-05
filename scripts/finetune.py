@@ -1,8 +1,8 @@
 from openai import OpenAI
 import json
-import os
 
 client = OpenAI()
+
 
 def finetune_model():
     try:
@@ -12,21 +12,35 @@ def finetune_model():
             file=open(training_file_path, "rb"),
             purpose="fine-tune"
         )
+        print("File uploaded:", file.id)
 
         # start finetuning job
-        finetune_response = client.fine_tuning.jobs.create(
+        response = client.fine_tuning.jobs.create(
             training_file=file.id,
-            model="gpt-4o-mini"
+            model="gpt-3.5-turbo",
         )
+        print("Finetuning job created:", response.id)
+
+        # convert response to readable format
+        response_dict = {
+            "id": response.id,
+            "status": response.status,
+            "created_at": response.created_at,
+            "model": response.model,
+            # add other attributes as needed
+        }
+        response_json = json.dumps(response_dict, indent=4)
 
         # log the finetune job details
-        with open('./logs/finetune.log', 'w') as log_file:
-            log_file.write(json.dumps(finetune_response, indent=4))
+        with open("./logs/finetune.log", "w") as log_file:
+            log_file.write(response_json)
 
-        print("Fine-tuning started. Check logs for details.")
-    
+        print("Response:", response_json)
+        print("Finetuning started. Run check logs or run `scripts/check_status.py` for details.")
+
     except Exception as e:
         print("Error:", e)
 
+
 if __name__ == "__main__":
-  finetune_model()
+    finetune_model()

@@ -1,6 +1,8 @@
 import openai
 
 # use the fine-tuned model
+
+
 def use_finetuned_model(prompt, model_name):
     response = openai.ChatCompletion.create(
         model=model_name,
@@ -10,6 +12,7 @@ def use_finetuned_model(prompt, model_name):
         ]
     )
     return response['choices'][0]['message']['content']
+
 
 # example use
 model_name = 'Marv'
