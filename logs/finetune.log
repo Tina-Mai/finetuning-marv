@@ -1,0 +1,24 @@
+{
+  "id": "ftjob-PuOQnCaGam6cREcsIwyWnc6f",
+  "created_at": 1722817909,
+  "error": {},
+  "fine_tuned_model": null,
+  "finished_at": null,
+  "hyperparameters": {
+    "n_epochs": "auto",
+    "batch_size": "auto",
+    "learning_rate_multiplier": "auto"
+  },
+  "model": "gpt-3.5-turbo-0125",
+  "object": "fine_tuning.job",
+  "organization_id": "org-VoJiAXdExpOZXdC0avV9eii3",
+  "result_files": [],
+  "seed": 1295395871,
+  "status": "validating_files",
+  "trained_tokens": null,
+  "training_file": "file-PzQEM8TfmptYitjIFzIuPONA",
+  "validation_file": null,
+  "estimated_finish": null,
+  "integrations": [],
+  "user_provided_suffix": "marv"
+}
